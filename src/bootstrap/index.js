@@ -1,0 +1,14 @@
+// import ky from 'ky';
+
+import router from './router';
+import {useRoute} from 'vue-router';
+
+export default {
+  install(app) {
+    app.use(router);
+    app.config.globalProperties.$append = (pathToAppend) => {
+      const path = useRoute().path;
+      return path + (path.endsWith('/') ? '' : '/') + pathToAppend;
+    };
+  },
+};

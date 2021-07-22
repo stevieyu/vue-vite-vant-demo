@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "vant": "^3.1.4",
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.5",
     "@vue/compiler-sfc": "^3.0.5",
     "vite": "^2.4.3",
-    "vite-plugin-components": "^0.13.0",
     "vite-plugin-style-import": "^1.0.1",
     "vite-plugin-voie": "^0.7.3"
   }
