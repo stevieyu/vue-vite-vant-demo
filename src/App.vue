@@ -1,9 +1,11 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <van-button type="primary" @click="Toast('Toast')">主要按钮</van-button>
   <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <script setup>
+import { Toast } from 'vant';
 import HelloWorld from './components/HelloWorld.vue'
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
