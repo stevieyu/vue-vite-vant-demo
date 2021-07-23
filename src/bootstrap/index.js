@@ -3,10 +3,13 @@
 import router from './router';
 import {useRoute} from 'vue-router';
 
+import store from '../store';
+
 import authingWxMp from '../supports/authingWxMp';
-
 authingWxMp().then((res) => {
+  if (!res) return;
 
+  store.me = res;
 });
 
 export default {

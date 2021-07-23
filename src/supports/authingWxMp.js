@@ -10,7 +10,9 @@ const me = {
   },
 };
 
+let _AuthingWxmp;
 export const init = async () => {
+  if (_AuthingWxmp) return _AuthingWxmp;
   const appId = import.meta.env.VITE_AUTHING_ID;
   const host = import.meta.env.VITE_AUTHING_HOST;
 
@@ -21,17 +23,24 @@ export const init = async () => {
 
   const {AuthingWxmp} = window;
 
-  return new AuthingWxmp({
+  _AuthingWxmp =new AuthingWxmp({
     appId,
     host,
   });
+  return _AuthingWxmp;
 };
 
-export const getUserInfo = async () => {
+const checkJump = () => {
   if (me.get()) return me.get();
 
   const {search} = location;
-  if (!search.includes('code=') && !search.includes('message=')) return;
+  return !(!search.includes('code=') && !search.includes('message=') && !search.includes('data='));
+};
+
+export const getUserInfo = async () => {
+  const checkRes = checkJump();
+  if (typeof checkRes !== 'boolean') return checkRes;
+  if (checkRes === false) return;
 
   const authingWx = await init();
 
@@ -47,13 +56,12 @@ export const getUserInfo = async () => {
 };
 
 export const authorization = async () => {
-  if (me.get()) return me.get();
+  const checkRes = checkJump();
+  if (typeof checkRes !== 'boolean') return checkRes;
+  if (checkRes === false) return;
 
   const authingWx = await init();
   if (!authingWx.checkWechatUA()) return;
-
-  const {search} = location;
-  if (search.includes('code=') && search.includes('message=')) return;
 
   window.location = authingWx.getAuthorizationUrl();
 };
