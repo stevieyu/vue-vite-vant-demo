@@ -3,6 +3,12 @@
 import router from './router';
 import {useRoute} from 'vue-router';
 
+import authingWxMp from '../supports/authingWxMp';
+
+authingWxMp().then((res) => {
+
+});
+
 export default {
   install(app) {
     app.use(router);

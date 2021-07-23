@@ -19,10 +19,7 @@ export default defineConfig({
       enforce: 'pre'
     },
     {
-      ...voie({
-        pagesDir: 'src/views',
-        // importMode: 'sync',
-      }),
+      ...voie(),
       enforce: 'pre'
     },
     styleImport({

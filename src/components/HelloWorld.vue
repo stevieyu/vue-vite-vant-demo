@@ -31,7 +31,10 @@
 import {defineProps, reactive} from 'vue';
 
 defineProps({
-  msg: String,
+  msg: {
+    type: String,
+    default: '',
+  },
 });
 
 const state = reactive({count: 0});
