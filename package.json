@@ -10,18 +10,18 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@vueuse/core": "^5.1.4",
-    "vant": "^3.1.4",
-    "vue": "^3.0.5",
+    "@vueuse/core": "^5.2.0",
     "ky": "^0.28.5",
     "loadjs": "^4.2.0",
+    "vant": "^3.1.5",
+    "vue": "^3.0.5",
     "vue-router": "^4.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.1",
-    "@vitejs/plugin-vue": "^1.2.5",
+    "@vitejs/plugin-vue": "^1.3.0",
     "@vue/compiler-sfc": "^3.0.5",
-    "vite": "^2.4.3",
+    "vite": "^2.4.4",
     "vite-plugin-style-import": "^1.0.1",
     "vite-plugin-voie": "^0.7.3"
   },
