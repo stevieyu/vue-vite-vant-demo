@@ -7,6 +7,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "surge": "pnpx -y surge dist vvvd.surge.stevie.top",
+    "lint": "eslint --fix --ext .js,.jsx,.vue --format friendly",
     "postinstall": "husky install"
   },
   "dependencies": {
@@ -36,7 +37,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [
-      "eslint --fix --ext .js,.jsx,.vue --format friendly"
+      "npm run lint"
     ]
   }
 }
