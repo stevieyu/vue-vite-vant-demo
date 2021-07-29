@@ -31,13 +31,7 @@
     "eslint-formatter-friendly": "latest",
     "eslint-config-google": "latest",
     "husky": "latest",
-    "lint-staged": "latest",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "npm run lint"
-    ]
   }
 }
