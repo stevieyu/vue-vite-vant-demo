@@ -1,4 +1,4 @@
-import load from '../helpers/load';
+import load from 'src/helpers/load';
 
 const key = 'AuthingWxmp';
 const me = {

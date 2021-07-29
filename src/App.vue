@@ -3,7 +3,7 @@
   {{ store.me }}
 </template>
 <script>
-import store from './store';
+import store from 'src/store';
 
 export default {
   setup() {
