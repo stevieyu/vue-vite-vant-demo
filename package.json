@@ -27,13 +27,13 @@
     "vite-plugin-voie": "^0.7.3"
   },
   "optionalDependencies": {
-    "eslint-plugin-vue": "latest",
-    "eslint-formatter-friendly": "latest",
-    "eslint-config-google": "latest",
-    "husky": "latest",
-    "lint-staged": "latest",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest"
+    "eslint-plugin-vue": "^7.14.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.1",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0"
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [
