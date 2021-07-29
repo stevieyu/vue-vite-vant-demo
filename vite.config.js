@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import {defineConfig} from 'vite';
+import vue from '@vitejs/plugin-vue';
 import voie from 'vite-plugin-voie';
 import eslint from '@rollup/plugin-eslint';
 import styleImport from 'vite-plugin-style-import';
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,11 +16,11 @@ export default defineConfig({
         include: /.*\.(vue|js|jsx|ts|tsx)$/m,
         exclude: [/node_modules|vue&type/, /^src/],
       }),
-      enforce: 'pre'
+      enforce: 'pre',
     },
     {
       ...voie(),
-      enforce: 'pre'
+      enforce: 'pre',
     },
     styleImport({
       libs: [
@@ -32,5 +32,5 @@ export default defineConfig({
       ],
     }),
     vue(),
-  ]
-})
+  ],
+});

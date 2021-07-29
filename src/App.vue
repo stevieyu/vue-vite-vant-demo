@@ -6,11 +6,11 @@
 import store from './store';
 
 export default {
-setup() {
-return {
-store,
-};
-},
+  setup() {
+    return {
+      store,
+    };
+  },
 };
 </script>
 
