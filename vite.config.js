@@ -2,6 +2,7 @@ import {resolve} from 'path';
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 import voie from 'vite-plugin-voie';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import eslint from '@rollup/plugin-eslint';
 import styleImport from 'vite-plugin-style-import';
 
@@ -33,10 +34,11 @@ export default defineConfig({
         {
           libraryName: 'vant',
           esModule: true,
-          resolveStyle: (name) => `vant/es/${name}/style`,
+          resolveStyle: (name) => `${__dirname}/node_modules/vant/es/${name}/style`,
         },
       ],
     }),
+    vueJsx(),
     vue(),
   ],
 });

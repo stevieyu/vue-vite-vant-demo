@@ -1,7 +1,7 @@
-import {reactive} from 'vue';
+import {reactive, computed} from 'vue';
 
 const state = reactive({
   me: null,
 });
 
-export default state;
+export default computed(() => state);

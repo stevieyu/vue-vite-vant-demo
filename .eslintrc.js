@@ -1,21 +1,32 @@
+const isDev = process.env.VITE_USER_NODE_ENV === 'development';
+
 module.exports = {
-  root: true,
-  env: {
+  'root': true,
+  'env': {
     browser: true,
     node: true,
     es6: true,
   },
-  extends: [
-    'plugin:vue/vue3-strongly-recommended',
+  'parserOptions': {
+    'ecmaFeatures': {
+      'jsx': true,
+    },
+  },
+  'extends': [
     'eslint:recommended',
     'google',
+    'plugin:vue/vue3-strongly-recommended',
   ],
-  rules: {
-    'no-console': 2,
-    'no-debugger': 2,
+  'rules': {
+    'no-console': isDev ? 0 : 2,
+    'no-debugger': isDev ? 0 : 2,
     'max-len': 0,
     'no-prototype-builtins': 0,
   },
-  globals: {
+  'globals': {
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+    defineExpose: 'readonly',
+    withDefaults: 'readonly',
   },
 };
