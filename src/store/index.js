@@ -1,7 +1,7 @@
 import {reactive, computed} from 'vue';
 
 const state = reactive({
-  me: null,
+  me: 'null-nullnullnullnullnullnull',
 });
 
 export default computed(() => state);

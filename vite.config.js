@@ -1,10 +1,11 @@
 import {resolve} from 'path';
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
-import voie from 'vite-plugin-voie';
+import pages from 'vite-plugin-pages';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import eslint from '@rollup/plugin-eslint';
 import styleImport from 'vite-plugin-style-import';
+import unocss from 'unocss/vite';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -13,6 +14,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'src': resolve(__dirname, 'src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   plugins: [
@@ -26,7 +28,9 @@ export default defineConfig({
       enforce: 'pre',
     },
     {
-      ...voie(),
+      ...pages({
+        dirs: 'src/pages',
+      }),
       enforce: 'pre',
     },
     styleImport({
@@ -38,6 +42,8 @@ export default defineConfig({
         },
       ],
     }),
+    // WindiCSS(),
+    unocss({ /* options */ }),
     vueJsx(),
     vue(),
   ],

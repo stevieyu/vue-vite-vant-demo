@@ -1,5 +1,3 @@
-// import ky from 'ky';
-
 import router from './router';
 import {useRoute} from 'vue-router';
 

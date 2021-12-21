@@ -15,19 +15,24 @@ const useExpose = (apis) => {
 
 const usePopupState = () => {
   const state = reactive({
-    show: false,
+    popup: {
+      show: false,
+    },
+    container: {},
   });
 
   const toggle = (show) => {
-    state.show = show;
+    state.popup.show = show;
   };
 
   const open = (props) => {
     Object.assign(state, props);
-    nextTick(() => toggle(true));
+    nextTick().then(()=>toggle(true));
   };
 
-  const close = () => toggle(false);
+  const close = () => {
+    nextTick().then(()=>toggle(false));
+  };
 
   useExpose({open, close, toggle});
 
@@ -39,9 +44,10 @@ const usePopupState = () => {
   };
 };
 
-const mountComponent = (RootComponent, id = 'xxxx') => {
+const mountComponent = (RootComponent, id = '') => {
   const app = createApp(RootComponent);
   let root;
+  if (!id) id = `instance-dialog-${Date.now()}`;
   if (id) {
     root = document.querySelector(`#${id}`);
   }
@@ -64,9 +70,15 @@ const mountComponent = (RootComponent, id = 'xxxx') => {
 const initInstance = () => {
   const Wrapper = {
     setup() {
-      const {state, toggle} = usePopupState();
-      return () => <Popup {...state} {...{'onUpdate:show': toggle}}>
-        {contentComponent && <contentComponent />}
+      const {state, toggle, close} = usePopupState();
+      const onClose = (...args) => {
+        close(...args);
+        if (!state._onClose) return;
+        state._onClose(...args);
+      };
+
+      return () => <Popup {...state.popup} {...{'onUpdate:show': toggle}}>
+        {contentComponent && <contentComponent {...state.container} {...{onClose: onClose}} />}
       </Popup>;
     },
   };
@@ -75,21 +87,16 @@ const initInstance = () => {
 };
 
 
-const Dialog = (options) => {
+const Dialog = (options = {}) => {
   if (!inBrowser) return Promise.resolve();
 
   options = Object.assign({}, Dialog.currentOptions, options);
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     if (!instance) {
       initInstance();
     }
-    options.close = () => {
-      reject(new Error('close'));
-    };
-    options.ok = () => {
-      resolve();
-    };
+    options._onClose = resolve;
     instance.open(options);
   });
 };

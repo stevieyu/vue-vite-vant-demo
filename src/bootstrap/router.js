@@ -1,12 +1,12 @@
 import {createRouter, createWebHistory, createWebHashHistory} from 'vue-router';
-import routes from 'voie-pages';
+import routes from '~pages';
 
 const history = import.meta.env.VITE_ROUTER_HASH !== 'true' ? createWebHistory() : createWebHashHistory();
 
 const router = createRouter({
   history,
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     return {top: 0};
   },
 });
