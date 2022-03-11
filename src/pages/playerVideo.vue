@@ -11,15 +11,15 @@
 </template>
 
 <script>
-// import wasmPlayer from 'src/components/video/EasyWasmPlayer.vue';
-import wasmPlayer from 'src/components/video/GoldPlay.vue';
+import wasmPlayer from 'src/components/video/EasyWasmPlayer.vue';
+// import wasmPlayer from 'src/components/video/GoldPlay.vue';
 import {useRoute} from 'vue-router';
 export default {
   components: {wasmPlayer},
   setup() {
     const route = useRoute();
     return {
-      src: route.query.s || 'https://ayurvedachina.com/aly/61bc422b995a2216e8fa4ad6baf45b2ecca6e82d.mp4',
+      src: route.query.s || 'http://yzm629.wicp.net/m3u8/bbb_sunflower_720p_h265.m3u8',
     };
   },
 };

@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue';
 import pages from 'vite-plugin-pages';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import eslint from '@rollup/plugin-eslint';
-import styleImport from 'vite-plugin-style-import';
+import {createStyleImportPlugin} from 'vite-plugin-style-import';
 import unocss from 'unocss/vite';
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -27,13 +27,11 @@ export default defineConfig({
       }),
       enforce: 'pre',
     },
-    {
-      ...pages({
-        dirs: 'src/pages',
-      }),
-      enforce: 'pre',
-    },
-    styleImport({
+    pages({
+      dirs: 'src/pages',
+      importMode: 'async',
+    }),
+    createStyleImportPlugin({
       libs: [
         {
           libraryName: 'vant',
@@ -42,9 +40,16 @@ export default defineConfig({
         },
       ],
     }),
-    // WindiCSS(),
-    unocss({ /* options */ }),
+    unocss({}),
     vueJsx(),
     vue(),
   ],
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+    ],
+    exclude: [
+    ],
+  },
 });

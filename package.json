@@ -13,26 +13,26 @@
     "tauri:build": "npm run build && npx @tauri-apps/cli build"
   },
   "dependencies": {
-    "@vueuse/core": "^7.2.2",
+    "@vueuse/core": "^8.0.0",
     "loadjs": "^4.2.0",
     "pinia": "^2.0.6",
-    "vant": "^3.2.4",
+    "vant": "^4.0.0-0",
     "vue": "^3.2.19",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
     "@rollup/plugin-eslint": "^8.0.1",
-    "@vitejs/plugin-vue": "^1.9.3",
+    "@vitejs/plugin-vue": "^2.2.4",
     "@vitejs/plugin-vue-jsx": "^1.2.0",
     "@vue/compiler-sfc": "^3.2.19",
-    "unocss": "^0.16.4",
+    "unocss": "^0.28.0",
     "vite": "^2.6.5",
-    "vite-plugin-pages": "^0.19.4",
-    "vite-plugin-style-import": "^1.2.1"
+    "vite-plugin-pages": "^0.21.0",
+    "vite-plugin-style-import": "^2.0.0"
   },
   "optionalDependencies": {
-    "@commitlint/cli": "^15.0.0",
-    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/cli": "^16.0.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-formatter-friendly": "^7.0.0",
     "eslint-plugin-vue": "^8.2.0",
