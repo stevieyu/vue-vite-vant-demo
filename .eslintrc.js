@@ -22,6 +22,7 @@ module.exports = {
     'no-debugger': isDev ? 0 : 2,
     'max-len': 0,
     'no-prototype-builtins': 0,
+    'vue/multi-word-component-names': 0,
   },
   'globals': {
     defineProps: 'readonly',
