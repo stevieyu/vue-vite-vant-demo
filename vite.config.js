@@ -3,7 +3,7 @@ import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 import pages from 'vite-plugin-pages';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import eslint from '@rollup/plugin-eslint';
+import eslint from 'vite-plugin-eslint';
 import {createStyleImportPlugin} from 'vite-plugin-style-import';
 import unocss from 'unocss/vite';
 
@@ -22,8 +22,6 @@ export default defineConfig({
       ...eslint({
         fix: true,
         formatter: 'friendly',
-        include: /.*\.(vue|js|jsx|ts|tsx)$/m,
-        exclude: [/node_modules|vue&type/, /^src/],
       }),
       enforce: 'pre',
     },
