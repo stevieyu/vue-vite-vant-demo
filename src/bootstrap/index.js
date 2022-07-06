@@ -10,7 +10,7 @@ authingWxMp().then((res) => {
   store.me = res;
 });
 
-export const isReady = router.isReady
+export const isReady = router.isReady;
 
 export default {
   install(app) {

@@ -1,9 +1,8 @@
 import {createApp} from 'vue';
-import bootstrap from 'src/bootstrap';
+import bootstrap, {isReady} from 'src/bootstrap';
 import App from 'src/App.vue';
 
 import 'uno.css';
 
-createApp(App)
-    .use(bootstrap)
-    .mount('#app');
+const app = createApp(App).use(bootstrap);
+isReady().then(() => app.mount('#app'));
