@@ -4,7 +4,7 @@ cdn.jsdelivr.net
 fastly.jsdelivr.net
 gcore.jsdelivr.net
 */
-export const load = (src) => new Promise((resolve) => {
+export const load = (src) => new Promise((resolve, reject) => {
     if(document.querySelector(`script[src="${src}"]`)) return resolve();
     const s = document.createElement('script');
     // src = src.replace(/cdn.jsdelivr.net/g, 'gcore.jsdelivr.net')
@@ -12,6 +12,7 @@ export const load = (src) => new Promise((resolve) => {
     s.type = 'text/javascript';
     s.crossOrigin = 'anonymous';
     s.onload = resolve
+    s.onabort = reject
     document.head.appendChild(s);
 });
 
