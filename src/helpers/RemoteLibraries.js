@@ -9,6 +9,8 @@ export const load = (src) => new Promise((resolve) => {
     const s = document.createElement('script');
     // src = src.replace(/cdn.jsdelivr.net/g, 'gcore.jsdelivr.net')
     s.src = src;
+    s.type = 'text/javascript';
+    s.crossOrigin = 'anonymous';
     s.onload = resolve
     document.head.appendChild(s);
 });
