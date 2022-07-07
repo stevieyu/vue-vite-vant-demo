@@ -11,6 +11,7 @@ export const load = (src) => new Promise((resolve, reject) => {
     s.src = src;
     s.type = 'text/javascript';
     s.crossOrigin = 'anonymous';
+    e.async = true;
     s.onload = resolve
     s.onabort = reject
     document.head.appendChild(s);
