@@ -2,10 +2,13 @@ import {resolve} from 'path';
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 import pages from 'vite-plugin-pages';
+import layouts from 'vite-plugin-vue-layouts';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import eslint from 'vite-plugin-eslint';
 import {createStyleImportPlugin} from 'vite-plugin-style-import';
 import unocss from 'unocss/vite';
+
+// TODO: add unplugin-vue-components
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -25,10 +28,6 @@ export default defineConfig({
       }),
       enforce: 'pre',
     },
-    pages({
-      dirs: 'src/pages',
-      importMode: 'async',
-    }),
     createStyleImportPlugin({
       libs: [
         {
@@ -41,6 +40,11 @@ export default defineConfig({
     unocss({}),
     vueJsx(),
     vue(),
+    pages({
+      dirs: 'src/pages',
+      importMode: 'async',
+    }),
+    layouts(),
   ],
   optimizeDeps: {
     include: [

@@ -1,11 +1,12 @@
 import {createRouter, createWebHistory, createWebHashHistory} from 'vue-router';
-import routes from '~pages';
+import {setupLayouts} from 'virtual:generated-layouts';
+import generatedRoutes from 'virtual:generated-pages';
 
 const history = import.meta.env.VITE_ROUTER_HASH !== 'true' ? createWebHistory() : createWebHashHistory();
 
 const router = createRouter({
   history,
-  routes,
+  routes: setupLayouts(generatedRoutes),
   scrollBehavior() {
     return {top: 0};
   },
