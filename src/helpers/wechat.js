@@ -82,7 +82,7 @@ export const setTitle = (title, img) => {
       // 替换成站标favicon路径或者任意存在的较小的图片即可，支付宝小程序引用默认空白的base64图片会有安全警告
       const _img = /alipay/.test(mobile) ? img : (img || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
       _img && iframe.setAttribute('src', _img)
-      const iframeCallback = function () {
+      const iframeCallback = () => {
         setTimeout(() => {
           iframe.removeEventListener('load', iframeCallback)
           document.body.removeChild(iframe)
@@ -92,3 +92,25 @@ export const setTitle = (title, img) => {
       document.body.appendChild(iframe)
     }
   }
+
+/*  禁用字体调整 */
+export const stopChangeFontSzie = () => {
+    if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+        handleFontSize();
+    } else {
+        if (document.addEventListener) {
+            document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+        } else if (document.attachEvent) {
+            document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+            document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+        }
+    }
+    function handleFontSize() {
+        // 设置网页字体为默认大小
+        WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 });
+        // 重写设置网页字体大小的事件
+        WeixinJSBridge.on('menu:setfont', () => {
+            WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 });
+        });
+    }
+}
