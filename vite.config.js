@@ -5,10 +5,10 @@ import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import eslint from 'vite-plugin-eslint';
-import {createStyleImportPlugin} from 'vite-plugin-style-import';
+import components from 'unplugin-vue-components/vite';
+import {VantResolver as vantResolver} from 'unplugin-vue-components/resolvers';
 import unocss from 'unocss/vite';
 
-// TODO: add unplugin-vue-components
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -28,13 +28,9 @@ export default defineConfig({
       }),
       enforce: 'pre',
     },
-    createStyleImportPlugin({
-      libs: [
-        {
-          libraryName: 'vant',
-          esModule: true,
-          resolveStyle: (name) => `${__dirname}/node_modules/vant/es/${name}/style`,
-        },
+    components({
+      resolvers: [
+        vantResolver(),
       ],
     }),
     unocss({}),

@@ -1,5 +1,6 @@
 import {createApp, reactive, nextTick, getCurrentInstance} from 'vue';
 import {Popup} from 'vant';
+import 'vant/es/popup/style';
 
 const inBrowser = typeof window !== 'undefined';
 

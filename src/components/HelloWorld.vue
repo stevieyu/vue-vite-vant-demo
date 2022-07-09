@@ -15,12 +15,11 @@
     >Vue 3 Documentation</a>
   </p>
 
-  <button
-    type="button"
+  <van-button
     @click="state.count++"
   >
     count is: {{ state.count }}
-  </button>
+  </van-button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
