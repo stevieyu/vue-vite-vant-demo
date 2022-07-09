@@ -32,6 +32,14 @@ export default async (file, options = {
   });
 };
 
+export const dataURLtoBlob = async (dataURL) => (await fetch(dataURL)).blob();
+
+export const blobToDataURL = (blob) => new Promise((resolve) => {
+  const a = new FileReader();
+  a.onload = (e) => resolve(e.target.result);
+  a.readAsDataURL(blob);
+});
+
 export const blobToFile = (blob, name = '', type = '') => {
   name = name || blob.name;
   type = type || blob.type;

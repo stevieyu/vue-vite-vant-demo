@@ -30,15 +30,15 @@ export const load = (src) => new Promise((resolve, reject) => {
  * })
  */
 export const QRCodeToDataURL = async (...args) => {
-  await load('https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js');
+  await load('https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.js');
   return window.QRCode.toDataURL(...args);
 };
 export const QRCodeToString = async (...args) => {
-  await load('https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js');
+  await load('https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.js');
   return window.QRCode.toString(...args);
 };
 export const QRCodeToCanvas = async (...args) => {
-  await load('https://cdn.jsdelivr.net/npm/qrcode@1.5.0/build/qrcode.js');
+  await load('https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.js');
   return window.QRCode.toCanvas(...args);
 };
 
@@ -47,10 +47,24 @@ export const QRCodeToCanvas = async (...args) => {
  * html2canvas(document.body).then((canvas) => {
  *     document.body.appendChild(canvas);
  * })
+ * @param {HTMLElement} element
+ * @param {array} options
  */
-export const html2canvas = async (...args) => {
-  await load('https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js');
-  return window.html2canvas(...args);
+export const html2canvas = async (element, options) => {
+  await load('https://cdn.jsdelivr.net/npm/html2canvas@1/dist/html2canvas.min.js');
+  // await load('https://cdn.jsdelivr.net/npm/npm/blueimp-canvas-to-blob/js/canvas-to-blob.min.js');
+  const {html2canvas} = window;
+
+  const canvas = await html2canvas(element, {
+    useCORS: true,
+    allowTaint: true,
+    logging: false,
+    ...options,
+  });
+
+  canvas.toBlob(() => {}, 'image/png', 1);
+
+  return canvas.toDataURL( 'image/png', 1);
 };
 
 /**
@@ -60,6 +74,6 @@ export const html2canvas = async (...args) => {
  * })
  */
 export const clipboard = async (...args) => {
-  await load('https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js');
+  await load('https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js');
   return new window.ClipboardJS(...args);
 };

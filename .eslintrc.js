@@ -25,6 +25,9 @@ module.exports = {
     'vue/multi-word-component-names': 0,
   },
   'globals': {
+    $ref: true,
+    $shallowRef: true,
+    $computed: true,
     defineProps: 'readonly',
     defineEmits: 'readonly',
     defineExpose: 'readonly',

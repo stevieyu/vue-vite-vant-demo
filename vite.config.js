@@ -35,7 +35,9 @@ export default defineConfig({
     }),
     unocss({}),
     vueJsx(),
-    vue(),
+    vue({
+      reactivityTransform: true,
+    }),
     pages({
       dirs: 'src/pages',
       importMode: 'async',
