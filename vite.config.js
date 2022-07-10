@@ -44,18 +44,19 @@ export default defineConfig({
     }),
     layouts(),
   ],
-  optimizeDeps: {
-    include: [
-      'vue',
-      'vue-router',
-    ],
-    exclude: [
-    ],
-  },
+  // optimizeDeps: {
+  //   include: [
+  //     'vue',
+  //     'vue-router',
+  //   ],
+  //   exclude: [
+  //   ],
+  // },
   server: {
     headers: {
-      'Cross-Origin-Embedder-Policy': 'require-corp',
-      'Cross-Origin-Opener-Policy': 'same-origin',
+      // 'Cross-Origin-Embedder-Policy': 'require-corp',
+      // 'Cross-Origin-Opener-Policy': 'same-origin',
+      // 'Cross-Origin-Resource-Policy': 'cross-origin' // use Opener-Policy, cross need this
     },
   },
 });

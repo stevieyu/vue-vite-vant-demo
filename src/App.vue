@@ -31,8 +31,15 @@ const onClick = () => {
 
 const links = {
   home: '/',
-  list: '/list',
-  player: '/playerVideo',
+  posts: '/posts',
+  ffmpeg: '/ffmpeg',
+  video: '/playerVideo',
 };
 </script>
 
+<style>
+.img-auto{
+  max-width: 100%;
+  height: auto !important;
+}
+</style>
