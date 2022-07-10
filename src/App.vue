@@ -6,30 +6,33 @@
   >
     {{ store.me }}
   </div>
+  <div class="flex justify-around mt-4">
+    <van-button
+      :to="link"
+      :key="name"
+      v-for="(link,name) in links"
+    >
+      {{ name }}
+    </van-button>
+  </div>
 </template>
-<script>
+<script setup>
 import store from 'src/store';
 // import popups from 'src/components/popups';
 import popups from 'src/helpers/InstanceDialog';
 import PopupsDemo from 'src/components/PopupsDemo.vue';
 
-export default {
-  components: {
-  },
-  setup() {
-    const p = popups(PopupsDemo);
-    const onClick = () => {
-      p().then(() => {
-        // console.log('then', args, Date.now());
-      });
-    };
-    // onClick();
+const p = popups(PopupsDemo);
+const onClick = () => {
+  p().then(() => {
+    // console.log('then', args, Date.now());
+  });
+};
 
-    return {
-      onClick,
-      store,
-    };
-  },
+const links = {
+  home: '/',
+  list: '/list',
+  player: '/playerVideo',
 };
 </script>
 

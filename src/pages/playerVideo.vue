@@ -1,13 +1,8 @@
 <template>
-  <div
-    class="relative"
-    style="padding-bottom: 56%"
-  >
-    <wasm-player
-      :src="src"
-      class="absolute inset-0"
-    />
-  </div>
+  <wasm-player
+    :src="src"
+    class="absolute inset-0"
+  />
 </template>
 
 <script>
@@ -20,7 +15,9 @@ import {useRoute} from 'vue-router';
 export default {
   components: {wasmPlayer},
   setup() {
-    const src = 'https://d2zihajmogu5jn.cloudfront.net/fmp4-muxed-no-playlist-codecs/index.m3u8';
+    // https://videojs-http-streaming.netlify.app/
+    const src = 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd';
+    // const src = 'https://d2zihajmogu5jn.cloudfront.net/fmp4-muxed-no-playlist-codecs/index.m3u8';
     // const src = 'http://yzm629.wicp.net/m3u8/bbb_sunflower_720p_h265.m3u8';
     const route = useRoute();
     return {

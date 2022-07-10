@@ -77,3 +77,28 @@ export const clipboard = async (...args) => {
   await load('https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js');
   return new window.ClipboardJS(...args);
 };
+
+/*
+const ffmpeg = createFFmpeg({
+  corePath: 'https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js',
+});
+ */
+export const ffmpeg = async (options = {}) => {
+  await load('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.10.1/dist/ffmpeg.min.js');
+  const {createFFmpeg, fetchFile} = window.FFmpeg;
+
+  const initFfmpeg = createFFmpeg({
+    corePath: 'https://jsdelivr.stevie.top/npm/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js',
+    log: false,
+    ...options,
+  });
+
+  if (!initFfmpeg.isLoaded()) {
+    await initFfmpeg.load();
+  }
+
+  return {
+    ffmpeg: initFfmpeg,
+    fetchFile,
+  };
+};
