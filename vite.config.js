@@ -29,6 +29,7 @@ export default defineConfig({
       enforce: 'pre',
     },
     components({
+      dirs: ['src/components/import'],
       resolvers: [
         vantResolver(),
       ],

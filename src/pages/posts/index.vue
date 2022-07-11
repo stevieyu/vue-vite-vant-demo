@@ -1,7 +1,12 @@
 <template>
-  <van-button @click="refresh">
-    refresh
-  </van-button>
+  <div class="flex justify-between items-center">
+    <van-button @click="refresh">
+      refresh
+    </van-button>
+    <van-button url="https://developers.forem.com/api">
+      API docs
+    </van-button>
+  </div>
   <van-list
     v-model:loading="loading"
     :finished="noMore"
@@ -27,7 +32,7 @@
         <van-tag
           v-for="tag in item.tag_list"
           :key="tag"
-          class="mx-1"
+          class="mx-px"
           plain
           type="primary"
         >
@@ -45,7 +50,7 @@ const fetchData = async ({page} = {}) => {
   const _page = page ? page + 1 : 1;
   const url = new URL('https://dev.to/api/articles');
   url.searchParams.append('page', _page);
-  url.searchParams.append('top', 7);
+  // url.searchParams.append('top', 7);
 
   let data = await (await fetch(url, {
   })).json();
