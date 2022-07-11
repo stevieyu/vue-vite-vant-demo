@@ -7,7 +7,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint --fix --ext .js,.jsx,.vue --format friendly",
-    "surge": "npx surge dist vvvd.surge.stevie.top",
+    "surge": "cp dist/index.html dist/200.html && npx surge dist vvvd.surge.stevie.top",
     "postinstall": "husky install"
   },
   "dependencies": {
