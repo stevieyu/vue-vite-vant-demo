@@ -45,6 +45,21 @@
 
 <script setup>
 import {useLoadMore} from 'vue-request';
+import {onUpdated} from 'vue';
+import {onBeforeRouteLeave} from 'vue-router';
+
+// onMounted(() => console.log('posts onMounted'));
+// onUpdated(() => console.log('posts onUpdated'));
+
+let storeY = 0;
+onBeforeRouteLeave(() => {
+  storeY = window.scrollY;
+});
+onUpdated(() => {
+  if (storeY > 0 && window.scrollY !== storeY) {
+    window.scrollTo(0, storeY);
+  }
+});
 
 const fetchData = async ({page} = {}) => {
   const _page = page ? page + 1 : 1;
@@ -55,7 +70,7 @@ const fetchData = async ({page} = {}) => {
   let data = await (await fetch(url, {
   })).json();
 
-  if (page >=3) data = [];
+  if (page >=2) data = [];
 
   return {
     list: data,
@@ -68,10 +83,6 @@ const {dataList, loadMore, noMore, loading, refresh} = useLoadMore(fetchData, {
   isNoMore: (d) => {
     return d?.finished === true;
   },
-  // cacheKey: () => {
-  //   // console.log('cacheKey', params);
-  //   return `list`;
-  // },
   manual: true,
 });
 </script>

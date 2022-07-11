@@ -11,6 +11,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@vueuse/components": "^8.9.1",
     "@vueuse/core": "^8.0.0",
     "loadjs": "^4.2.0",
     "pinia": "^2.0.6",

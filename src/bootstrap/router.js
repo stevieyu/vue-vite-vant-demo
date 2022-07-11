@@ -7,9 +7,9 @@ const history = import.meta.env.VITE_ROUTER_HASH !== 'true' ? createWebHistory()
 const router = createRouter({
   history,
   routes: setupLayouts(generatedRoutes),
-  scrollBehavior() {
-    return {top: 0};
-  },
+  // scrollBehavior() {
+  //   return {top: 0};
+  // },
 });
 
 // router.beforeEach((to, from, next) => {

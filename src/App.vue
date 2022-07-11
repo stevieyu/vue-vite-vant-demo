@@ -38,8 +38,11 @@ const links = {
 </script>
 
 <style>
-.img-auto{
-  max-width: 100%;
+.max-wh-auto,.max-wh-auto img,.max-wh-auto video{
+  max-width: 100% !important;
   height: auto !important;
+}
+.max-wh-auto iframe{
+  max-width: 100% !important;
 }
 </style>

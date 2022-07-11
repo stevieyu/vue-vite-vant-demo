@@ -1,10 +1,12 @@
 <template>
   <div v-if="item">
     <van-image :src="!item.cover_image?'': item.cover_image" />
-    <div>{{ item.title }}</div>
+    <h1 class="p-1">
+      {{ item.title }}
+    </h1>
     <div
       v-html="item.body_html"
-      class="img-auto"
+      class="max-wh-auto p-1"
     />
   </div>
 </template>
