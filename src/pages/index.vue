@@ -8,7 +8,7 @@
       src="/src/assets/logo.png"
     >
     <img
-      src="https://picsum.photos/200/300"
+      src="https://dummyimage.com/200x100/fff/000"
       alt=""
     >
     <HelloWorld msg="Hello Vue 3 + Vite" />

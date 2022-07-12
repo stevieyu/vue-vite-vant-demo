@@ -105,4 +105,4 @@ export const ffmpeg = async (options = {}) => {
 
 export const tailwindcss = async (options = {}) => {
   await load('https://cdn.tailwindcss.com/3.1.4');
-})
+};
