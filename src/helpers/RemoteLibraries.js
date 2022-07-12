@@ -11,9 +11,9 @@ test1.jsdelivr.net
 testingcf.jsdelivr.net
 */
 export const load = (src) => new Promise((resolve, reject) => {
+  src = src.replace(/cdn.jsdelivr.net/g, 'jsdelivr.stevie.top');
   if (document.querySelector(`script[src="${src}"]`)) return resolve();
   const s = document.createElement('script');
-  src = src.replace(/cdn.jsdelivr.net/g, 'jsdelivr.stevie.top');
   s.src = src;
   s.type = 'text/javascript';
   s.crossOrigin = 'anonymous';
@@ -102,3 +102,7 @@ export const ffmpeg = async (options = {}) => {
     fetchFile,
   };
 };
+
+export const tailwindcss = async (options = {}) => {
+  await load('https://cdn.tailwindcss.com/3.1.4');
+})
