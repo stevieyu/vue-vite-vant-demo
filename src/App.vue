@@ -33,6 +33,7 @@ const links = {
   home: '/',
   posts: '/posts',
   ffmpeg: '/ffmpeg',
+  iframe: '/iframe',
   video: '/playerVideo',
 };
 </script>
