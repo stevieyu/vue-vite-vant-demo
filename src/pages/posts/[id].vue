@@ -1,5 +1,5 @@
 <template>
-  <VanLoad :path="`https://dev.to/api/articles/${id}`">
+  <VanLoad :path="`/articles/${id}`">
     <template #default="{item}">
       <van-image
         v-if="item.cover_image"
@@ -17,6 +17,7 @@
 </template>
 
 <script setup>
+import config from '@/features/cqrs/config';
 import VanLoad from '@/features/cqrs/components/VanLoad.vue';
 defineProps({
   id: {
@@ -24,5 +25,5 @@ defineProps({
     required: true,
   },
 });
-
+config.origin = 'https://dev.to/api';
 </script>

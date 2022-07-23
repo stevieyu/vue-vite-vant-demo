@@ -5,7 +5,7 @@
     </van-button>
   </div>
   <ListLoadMore
-    path="https://dev.to/api/articles"
+    path="/articles"
     :search="search"
   >
     <template #default="{list}">
@@ -41,8 +41,10 @@
 </template>
 
 <script setup>
+import config from '@/features/cqrs/config';
 import ListLoadMore from '@/features/cqrs/components/VanListLoadMore.vue';
 const search = $ref({
   top: 7,
 });
+config.origin = 'https://dev.to/api';
 </script>
