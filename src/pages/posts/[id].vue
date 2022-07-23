@@ -1,6 +1,9 @@
 <template>
   <div v-if="item">
-    <van-image :src="!item.cover_image?'': item.cover_image" />
+    <van-image
+      v-if="item.cover_image"
+      :src="item.cover_image"
+    />
     <h1 class="p-1">
       {{ item.title }}
     </h1>
