@@ -11,12 +11,18 @@
       error-text="请求失败，点击重新加载"
       @load="loadMore"
     >
+      <van-skeleton
+        title
+        avatar
+        :row="3"
+        v-show="!dataList || !dataList.length"
+      />
       <slot :list="dataList" />
     </van-list>
   </van-pull-refresh>
 </template>
 <script setup>
-// import {List as VanList, PullRefresh as VanPullRefresh} from 'vant';
+// import {List as VanList, PullRefresh as VanPullRefresh, Skeleton as VanSkeleton} from 'vant';
 import {useLoadMore} from 'vue-request';
 import {onUpdated, watch} from 'vue';
 import {onBeforeRouteLeave} from 'vue-router';
@@ -61,7 +67,7 @@ const fetchData = async (ctx) => {
 };
 
 const refreshDeps = [];
-if (props.query) refreshDeps.push(props.query);
+if (props.search) refreshDeps.push(props.search);
 
 const {dataList, refresh, loadMore, noMore, loading, error} = useLoadMore(fetchData, {
   refreshDeps,

@@ -8,26 +8,26 @@ export const setQuery = (paramsQuery) => {
 };
 
 export default (path, params = null) => {
-  let url = config.origin.replace(/\/$/, '');
-  url = path.includes('http') ? path : url + path;
+  let uri = config.origin.replace(/\/$/, '');
+  uri = path.includes('http') ? path : uri + path;
 
-  if (!query) query = initQuery;
-  return query(url, params);
-  // throttlePromise();
-};
-
-/**
- *
- * @param {module:url.URL} url
- * @param {object|null} params
- * @return {Promise<any>}
- */
-async function initQuery(url, params = null) {
-  url = new URL(url);
-  if (typeof params === 'object') {
+  const url = new URL(uri);
+  if (params && typeof params === 'object') {
     for (const key of Object.keys(params)) {
       url.searchParams.append(key, params[key]);
     }
   }
-  return await (await fetch(url)).json();
+
+  if (!query) query = initQuery;
+  return query(url);
+  // return throttlePromise(query(url, params));
+};
+
+/**
+ *
+ * @param {string|URL} url
+ * @return {Promise<any>}
+ */
+async function initQuery(url) {
+  return await (await fetch(url.toString())).json();
 }

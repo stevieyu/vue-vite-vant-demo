@@ -1,41 +1,27 @@
 <template>
-  <div v-if="item">
-    <van-image
-      v-if="item.cover_image"
-      :src="item.cover_image"
-    />
-    <h1 class="p-1">
-      {{ item.title }}
-    </h1>
-    <div
-      v-html="item.body_html"
-      class="max-wh-auto p-1"
-    />
-  </div>
+  <VanLoad :path="`https://dev.to/api/articles/${id}`">
+    <template #default="{item}">
+      <van-image
+        v-if="item.cover_image"
+        :src="item.cover_image"
+      />
+      <h1 class="p-1">
+        {{ item.title }}
+      </h1>
+      <div
+        v-html="item.body_html"
+        class="max-wh-auto p-1"
+      />
+    </template>
+  </VanLoad>
 </template>
 
 <script setup>
-import {useRequest} from 'vue-request';
-
-const props = defineProps({
+import VanLoad from '@/features/cqrs/components/VanLoad.vue';
+defineProps({
   id: {
     type: [Number, String],
     required: true,
-  },
-});
-
-const id = $computed(() => +props.id);
-
-const fetchData = async () => {
-  const url = new URL(`https://dev.to/api/articles/${id}`);
-
-  return await (await fetch(url, {
-  })).json();
-};
-
-const {data: item} = useRequest(fetchData, {
-  cacheKey: () => {
-    return `show-${id}`;
   },
 });
 
