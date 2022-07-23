@@ -23,7 +23,7 @@ import {onBeforeRouteLeave} from 'vue-router';
 import request from '../query';
 
 let storeScrollY = 0;
-onBeforeRouteLeave((to, from) => {
+onBeforeRouteLeave(() => {
   storeScrollY = window.scrollY;
 });
 onUpdated(() => {
