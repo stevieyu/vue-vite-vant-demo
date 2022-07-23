@@ -2,7 +2,6 @@ import {createApp} from 'vue';
 import bootstrap, {isReady} from 'src/bootstrap';
 import App from 'src/App.vue';
 
-import './libs/feedback';
 
 import 'uno.css';
 

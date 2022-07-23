@@ -1,5 +1,8 @@
 import {Toast as toast, showDialog, showConfirmDialog} from 'vant';
 
+import 'vant/es/toast/style';
+import 'vant/es/dialog/style';
+
 export const $toast = (msg, options = {}) => {
   toast({
     message: msg,
