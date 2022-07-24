@@ -15,7 +15,7 @@
         title
         avatar
         :row="3"
-        v-show="!dataList || !dataList.length"
+        v-show="(!dataList || !dataList.length) && !listIsError"
       />
       <slot :list="dataList" />
     </van-list>
