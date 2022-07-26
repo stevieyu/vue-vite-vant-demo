@@ -18,10 +18,14 @@ app.config.errorHandler = (err) => {
 };
 
 (() => {
-  const src = 'https://cdn.jsdelivr.net/npm/eruda';
-  document.write(`<script src="${src}"></script><script>eruda.init();</script>`);
+  const s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/eruda';
+  s.onload = () => window.eruda.init();
+  document.head.appendChild(s);
 })();
 (() => {
-  const src = 'https://cdn.jsdelivr.net/npm/vconsole';
-  document.write(`<script src="${src}"></script><script>new VConsole()</script>`);
+  const s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/vconsole';
+  s.onload = () => new window.VConsole();
+  document.head.appendChild(s);
 })();
