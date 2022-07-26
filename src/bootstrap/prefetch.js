@@ -12,9 +12,11 @@ if (import.meta.env.PROD) {
 }
 
 const createLink = (href) => {
+  if (document.querySelector(`[src="${href}"]`)) return;
+  if (document.querySelector(`[href="${href}"]`)) return;
   const link = document.createElement('link');
   link.rel = 'prefetch';
-  link.as = 'style';
+  link.as = href.includes('.js') ? 'script' : 'style';
   link.href = href;
   document.head.appendChild(link);
 };
