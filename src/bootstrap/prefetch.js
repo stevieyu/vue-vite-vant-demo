@@ -1,3 +1,15 @@
+if (import.meta.env.PROD) {
+  const baseUrl = import.meta.env.BASE_URL;
+  fetch(baseUrl + 'manifest.json')
+      .then((res) => {
+        if (res.status !== 200) throw new Error(res.statusText);
+        return res.text();
+      })
+      .then((res) => {
+        res.match(/assets.*[js|css]/gm)
+            .forEach((i) => createLink(baseUrl + i));
+      });
+}
 
 const createLink = (href) => {
   const link = document.createElement('link');
@@ -5,5 +17,5 @@ const createLink = (href) => {
   link.as = 'style';
   link.href = href;
   document.head.appendChild(link);
-}
+};
 

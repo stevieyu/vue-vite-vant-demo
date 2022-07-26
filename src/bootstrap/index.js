@@ -1,4 +1,5 @@
 // import './vant';
+import './prefetch';
 
 import router from './router';
 import {useRoute} from 'vue-router';
