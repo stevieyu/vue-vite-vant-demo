@@ -1,4 +1,4 @@
-import {Toast as toast, showDialog, showConfirmDialog} from 'vant';
+import {Toast as toast, showLoadingToast, showDialog, showConfirmDialog} from 'vant';
 
 import 'vant/es/toast/style';
 import 'vant/es/dialog/style';
@@ -12,13 +12,12 @@ export const $toast = (msg, options = {}) => {
   return () => toast.clear();
 };
 
-export const $loading = (title = '加载中', options) => {
-  toast.loading({
+export const $loading = (title = '加载中...', options) => {
+  return showLoadingToast({
     message: title,
     forbidClick: true,
-    loadingType: 'spinner',
+    ...options,
   });
-  return () => toast.clear();
 };
 
 export const $alert = (title, message = '', options = {}) => {

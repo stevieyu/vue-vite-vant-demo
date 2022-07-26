@@ -12,8 +12,20 @@ const router = createRouter({
   // },
 });
 
-// router.beforeEach((to, from, next) => {
-//   next();
+let l = null;
+router.beforeEach((to, from, next) => {
+  l = $loading();
+  next();
+});
+
+// router.beforeResolve(async (to) => {
 // });
+
+router.afterEach(() => {
+  if (l) {
+    l.close();
+    l = null;
+  }
+});
 
 export default router;

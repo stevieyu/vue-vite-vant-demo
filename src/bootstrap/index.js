@@ -1,4 +1,4 @@
-import './vant';
+// import './vant';
 
 import router from './router';
 import {useRoute} from 'vue-router';
@@ -14,15 +14,17 @@ authingWxMp().then((res) => {
   store.me = res;
 });
 
+Object.assign(window, feedback);
+
 export const isReady = router.isReady;
 
 export default {
   install(app) {
-    app.use(router);
     Object.assign(app.config.globalProperties, feedback);
     app.config.globalProperties.$append = (pathToAppend) => {
       const path = useRoute().path;
       return path + (path.endsWith('/') ? '' : '/') + pathToAppend;
     };
+    app.use(router);
   },
 };
