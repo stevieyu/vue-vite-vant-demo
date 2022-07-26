@@ -33,5 +33,6 @@ module.exports = {
     defineExpose: 'readonly',
     withDefaults: 'readonly',
     $loading: 'readonly',
+    $toast: 'readonly',
   },
 };

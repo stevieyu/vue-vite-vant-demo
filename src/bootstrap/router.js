@@ -23,7 +23,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
   if (l) {
-    l.close();
+    l();
     l = null;
   }
 });
