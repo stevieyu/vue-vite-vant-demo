@@ -16,3 +16,12 @@ app.config.errorHandler = (err) => {
   }
 //   console.log('errorHandler', err, instance, info);
 };
+
+(() => {
+  const src = 'https://cdn.jsdelivr.net/npm/eruda';
+  document.write(`<script src="${src}"></script><script>eruda.init();</script>`);
+})();
+(() => {
+  const src = 'https://cdn.jsdelivr.net/npm/vconsole';
+  document.write(`<script src="${src}"></script><script>new VConsole()</script>`);
+})();
