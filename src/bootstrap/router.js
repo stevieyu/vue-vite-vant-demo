@@ -2,7 +2,9 @@ import {createRouter, createWebHistory, createWebHashHistory} from 'vue-router';
 import {setupLayouts} from 'virtual:generated-layouts';
 import generatedRoutes from 'virtual:generated-pages';
 
-const history = import.meta.env.VITE_ROUTER_HASH !== 'true' ? createWebHistory() : createWebHashHistory();
+const {BASE_URL, VITE_ROUTER_HASH} = import.meta.env;
+
+const history = VITE_ROUTER_HASH ? createWebHashHistory(BASE_URL) : createWebHistory(BASE_URL);
 
 const router = createRouter({
   history,
