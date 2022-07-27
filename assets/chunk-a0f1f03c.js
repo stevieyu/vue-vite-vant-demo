@@ -1,1 +1,0 @@
-import{u as t,o as r,c as s,b as c}from"./app-2b400393.js";const o=["src"],_={__name:"iframe",setup(a){const e=t();return(n,u)=>(r(),s("iframe",{src:c(e).query.s||"http://vue-wechat-title.deboy.cn",class:"border-0 w-full h-screen"},null,8,o))}};export{_ as default};
