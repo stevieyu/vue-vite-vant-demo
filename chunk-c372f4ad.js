@@ -1,1 +1,0 @@
-import{o as n,c as s,a as r,t as u,d,w as i,F as l,B as c,e as p}from"./app-497639ab.js";const _=p(" one "),B={__name:"[...id]",props:{id:{type:String,default:""}},setup(t){return(a,e)=>{const o=c;return n(),s(l,null,[r("div",null,u(t.id),1),d(o,{onClick:e[0]||(e[0]=m=>a.$router.push("/users/1"))},{default:i(()=>[_]),_:1})],64)}}};export{B as default};
