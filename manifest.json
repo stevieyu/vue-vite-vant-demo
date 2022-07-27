@@ -1,0 +1,136 @@
+{
+  "src/assets/logo.png": {
+    "file": "assets/logo.03d6d6da.png",
+    "src": "src/assets/logo.png"
+  },
+  "index.html": {
+    "file": "assets/index.ed2bab4c.js",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/pages/[...any].vue",
+      "src/pages/ffmpeg.vue",
+      "src/pages/iframe.vue",
+      "src/pages/index.vue",
+      "src/pages/playerVideo.vue",
+      "src/pages/posts/[id].vue",
+      "src/pages/posts/index.vue",
+      "src/pages/users/[...id].vue"
+    ],
+    "css": [
+      "assets/index.9e26f269.css"
+    ]
+  },
+  "src/pages/[...any].vue": {
+    "file": "assets/_...any_.512ba6f3.js",
+    "src": "src/pages/[...any].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/pages/ffmpeg.vue": {
+    "file": "assets/ffmpeg.08d45ff1.js",
+    "src": "src/pages/ffmpeg.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_RemoteLibraries.4df6a85a.js",
+      "index.html"
+    ]
+  },
+  "_RemoteLibraries.4df6a85a.js": {
+    "file": "assets/RemoteLibraries.4df6a85a.js"
+  },
+  "src/pages/iframe.vue": {
+    "file": "assets/iframe.e13c1b35.js",
+    "src": "src/pages/iframe.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/pages/index.vue": {
+    "file": "assets/index.16400a0c.js",
+    "src": "src/pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_RemoteLibraries.4df6a85a.js"
+    ],
+    "css": [
+      "assets/index.970201cc.css"
+    ],
+    "assets": [
+      "assets/logo.03d6d6da.png"
+    ]
+  },
+  "src/pages/playerVideo.vue": {
+    "file": "assets/playerVideo.88545499.js",
+    "src": "src/pages/playerVideo.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/pages/posts/[id].vue": {
+    "file": "assets/_id_.a98645fa.js",
+    "src": "src/pages/posts/[id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_query.3c036b19.js"
+    ],
+    "css": [
+      "assets/[id].c8e6165e.css"
+    ]
+  },
+  "_query.3c036b19.js": {
+    "file": "assets/query.3c036b19.js",
+    "imports": [
+      "index.html"
+    ],
+    "css": [
+      "assets/query.7b9086eb.css"
+    ]
+  },
+  "src/pages/posts/index.vue": {
+    "file": "assets/index.0188a601.js",
+    "src": "src/pages/posts/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html",
+      "_query.3c036b19.js"
+    ],
+    "css": [
+      "assets/index.23af9c83.css"
+    ]
+  },
+  "src/pages/users/[...id].vue": {
+    "file": "assets/_...id_.2efa5fb9.js",
+    "src": "src/pages/users/[...id].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "index.html"
+    ]
+  },
+  "src/pages/posts/index.css": {
+    "file": "assets/index.23af9c83.css",
+    "src": "src/pages/posts/index.css"
+  },
+  "query.css": {
+    "file": "assets/query.7b9086eb.css",
+    "src": "query.css"
+  },
+  "src/pages/posts/[id].css": {
+    "file": "assets/[id].c8e6165e.css",
+    "src": "src/pages/posts/[id].css"
+  },
+  "src/pages/index.css": {
+    "file": "assets/index.970201cc.css",
+    "src": "src/pages/index.css"
+  },
+  "index.css": {
+    "file": "assets/index.9e26f269.css",
+    "src": "index.css"
+  }
+}

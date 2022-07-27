@@ -1,1 +1,0 @@
-import{o as n,c as s,a as r,t as u,b as d,w as i,F as l,d as c,B as p}from"./index.56d0a142.js";const _=c(" one "),B={__name:"[...id]",props:{id:{type:String,default:""}},setup(e){return(a,t)=>{const o=p;return n(),s(l,null,[r("div",null,u(e.id),1),d(o,{onClick:t[0]||(t[0]=m=>a.$router.push("/users/1"))},{default:i(()=>[_]),_:1})],64)}}};export{B as default};
