@@ -13,6 +13,7 @@ const isProd = process.env.NODE_ENV === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: process.env.npm_lifecycle_event === 'gh' ? '/vue-vite-vant-demo/' : '/',
   plugins: [
     !isProd && {
       ...eslint({
