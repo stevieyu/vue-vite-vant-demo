@@ -21,7 +21,9 @@ router.beforeEach((to, from, next) => {
 // router.beforeResolve(async (to) => {
 // });
 
-router.afterEach(() => {
+const originTitle = document.title;
+router.afterEach((to) => {
+  document.title = to.name + ' - ' + originTitle;
   if (l) {
     l();
     l = null;
