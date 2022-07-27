@@ -17,6 +17,7 @@
   </div>
 </template>
 <script setup>
+import store from './store';
 // import popups from './components/popups';
 import popups from './helpers/InstanceDialog';
 import PopupsDemo from './components/PopupsDemo.vue';

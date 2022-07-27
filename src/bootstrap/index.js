@@ -4,7 +4,7 @@ import './prefetch';
 import router from './router';
 import {useRoute} from 'vue-router';
 
-import store from '../store';
+import store from '@/store';
 
 import feedback from '@/libs/feedback';
 
