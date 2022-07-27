@@ -1,10 +1,10 @@
 {
   "src/assets/logo.png": {
-    "file": "assets/logo.03d6d6da.png",
+    "file": "app-03d6d6da.css",
     "src": "src/assets/logo.png"
   },
   "index.html": {
-    "file": "assets/index.ed2bab4c.js",
+    "file": "app-497639ab.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -18,11 +18,11 @@
       "src/pages/users/[...id].vue"
     ],
     "css": [
-      "assets/index.9e26f269.css"
+      "app-9e26f269.css"
     ]
   },
   "src/pages/[...any].vue": {
-    "file": "assets/_...any_.512ba6f3.js",
+    "file": "chunk-28388fc2.js",
     "src": "src/pages/[...any].vue",
     "isDynamicEntry": true,
     "imports": [
@@ -30,19 +30,19 @@
     ]
   },
   "src/pages/ffmpeg.vue": {
-    "file": "assets/ffmpeg.08d45ff1.js",
+    "file": "chunk-999003f5.js",
     "src": "src/pages/ffmpeg.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_RemoteLibraries.4df6a85a.js",
+      "_chunk-c67595dd.js",
       "index.html"
     ]
   },
-  "_RemoteLibraries.4df6a85a.js": {
-    "file": "assets/RemoteLibraries.4df6a85a.js"
+  "_chunk-c67595dd.js": {
+    "file": "chunk-c67595dd.js"
   },
   "src/pages/iframe.vue": {
-    "file": "assets/iframe.e13c1b35.js",
+    "file": "chunk-8f898364.js",
     "src": "src/pages/iframe.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -50,22 +50,22 @@
     ]
   },
   "src/pages/index.vue": {
-    "file": "assets/index.16400a0c.js",
+    "file": "chunk-89400a4c.js",
     "src": "src/pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_RemoteLibraries.4df6a85a.js"
+      "_chunk-c67595dd.js"
     ],
     "css": [
-      "assets/index.970201cc.css"
+      "app-970201cc.css"
     ],
     "assets": [
-      "assets/logo.03d6d6da.png"
+      "app-03d6d6da.css"
     ]
   },
   "src/pages/playerVideo.vue": {
-    "file": "assets/playerVideo.88545499.js",
+    "file": "chunk-c2dffecf.js",
     "src": "src/pages/playerVideo.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -73,64 +73,64 @@
     ]
   },
   "src/pages/posts/[id].vue": {
-    "file": "assets/_id_.a98645fa.js",
+    "file": "chunk-ca8676ef.js",
     "src": "src/pages/posts/[id].vue",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_query.3c036b19.js"
+      "_chunk-3c85a71c.js"
     ],
     "css": [
-      "assets/[id].c8e6165e.css"
+      "app-c8e6165e.css"
     ]
   },
-  "_query.3c036b19.js": {
-    "file": "assets/query.3c036b19.js",
+  "_chunk-3c85a71c.js": {
+    "file": "chunk-3c85a71c.js",
     "imports": [
       "index.html"
     ],
     "css": [
-      "assets/query.7b9086eb.css"
+      "app-7b9086eb.css"
     ]
   },
   "src/pages/posts/index.vue": {
-    "file": "assets/index.0188a601.js",
+    "file": "chunk-17dfb6c1.js",
     "src": "src/pages/posts/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "index.html",
-      "_query.3c036b19.js"
+      "_chunk-3c85a71c.js"
     ],
     "css": [
-      "assets/index.23af9c83.css"
+      "app-23af9c83.css"
     ]
   },
   "src/pages/users/[...id].vue": {
-    "file": "assets/_...id_.2efa5fb9.js",
+    "file": "chunk-c372f4ad.js",
     "src": "src/pages/users/[...id].vue",
     "isDynamicEntry": true,
     "imports": [
       "index.html"
     ]
   },
-  "src/pages/posts/index.css": {
-    "file": "assets/index.23af9c83.css",
-    "src": "src/pages/posts/index.css"
-  },
   "query.css": {
-    "file": "assets/query.7b9086eb.css",
+    "file": "app-7b9086eb.css",
     "src": "query.css"
   },
   "src/pages/posts/[id].css": {
-    "file": "assets/[id].c8e6165e.css",
+    "file": "app-c8e6165e.css",
     "src": "src/pages/posts/[id].css"
   },
+  "src/pages/posts/index.css": {
+    "file": "app-23af9c83.css",
+    "src": "src/pages/posts/index.css"
+  },
   "src/pages/index.css": {
-    "file": "assets/index.970201cc.css",
+    "file": "app-970201cc.css",
     "src": "src/pages/index.css"
   },
   "index.css": {
-    "file": "assets/index.9e26f269.css",
+    "file": "app-9e26f269.css",
     "src": "index.css"
   }
 }
