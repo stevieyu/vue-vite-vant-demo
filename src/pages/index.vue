@@ -5,7 +5,7 @@
   >
     <img
       alt="Vue logo"
-      src="/src/assets/logo.png"
+      src="@/assets/logo.png"
     >
     <img
       src="https://dummyimage.com/200x100/fff/000"

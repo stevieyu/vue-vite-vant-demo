@@ -1,6 +1,6 @@
 import {createApp} from 'vue';
-import bootstrap, {isReady} from 'src/bootstrap';
-import App from 'src/App.vue';
+import bootstrap, {isReady} from './bootstrap';
+import App from './App.vue';
 
 
 import 'uno.css';

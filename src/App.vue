@@ -17,10 +17,9 @@
   </div>
 </template>
 <script setup>
-import store from 'src/store';
-// import popups from 'src/components/popups';
-import popups from 'src/helpers/InstanceDialog';
-import PopupsDemo from 'src/components/PopupsDemo.vue';
+// import popups from './components/popups';
+import popups from './helpers/InstanceDialog';
+import PopupsDemo from './components/PopupsDemo.vue';
 
 const p = popups(PopupsDemo);
 const onClick = () => {

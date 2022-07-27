@@ -6,9 +6,9 @@
 </template>
 
 <script>
-// import wasmPlayer from 'src/components/video/EasyWasmPlayer.vue';
-// import wasmPlayer from 'src/components/video/GoldPlay.vue';
-// import wasmPlayer from 'src/components/video/AliPlayer.vue';
+// import wasmPlayer from '@/components/video/EasyWasmPlayer.vue';
+// import wasmPlayer from '@/components/video/GoldPlay.vue';
+// import wasmPlayer from '@/components/video/AliPlayer.vue';
 // import wasmPlayer from '@/components/video/dPlayer.vue';
 import wasmPlayer from '@/components/video/videoJs.vue';
 import {useRoute} from 'vue-router';

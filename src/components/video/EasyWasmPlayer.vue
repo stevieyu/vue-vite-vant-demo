@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import load from 'src/helpers/load';
+import load from '@/helpers/load';
 export default {
   props: {
     src: {

@@ -1,3 +1,4 @@
+import {resolve} from 'path';
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 import pages from 'vite-plugin-pages';
@@ -14,6 +15,11 @@ const isProd = process.env.NODE_ENV === 'production';
 // https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.npm_lifecycle_event === 'gh' ? '/vue-vite-vant-demo/' : '/',
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
   plugins: [
     !isProd && {
       ...eslint({
