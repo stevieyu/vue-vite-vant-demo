@@ -45,14 +45,6 @@ export default defineConfig({
     }),
     layouts(),
   ],
-  // optimizeDeps: {
-  //   include: [
-  //     'vue',
-  //     'vue-router',
-  //   ],
-  //   exclude: [
-  //   ],
-  // },
   server: {
     headers: {
       // 'Cross-Origin-Embedder-Policy': 'require-corp',
@@ -62,5 +54,13 @@ export default defineConfig({
   },
   build: {
     manifest: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'app-[hash].js',
+        assetFileNames: 'app-[hash].css',
+        chunkFileNames: 'chunk-[hash].js',
+        manualChunks: undefined,
+      },
+    },
   },
 });
