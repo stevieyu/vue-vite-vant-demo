@@ -56,9 +56,9 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       output: {
-        entryFileNames: 'app-[hash].js',
-        assetFileNames: 'app-[hash].css',
-        chunkFileNames: 'chunk-[hash].js',
+        entryFileNames: 'asset/app-[hash].js',
+        assetFileNames: 'asset/app-[hash].css',
+        chunkFileNames: 'asset/chunk-[hash].js',
         manualChunks: undefined,
       },
     },
