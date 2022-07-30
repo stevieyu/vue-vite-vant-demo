@@ -117,17 +117,17 @@
     "file": "assets/asset-c8e6165e.css",
     "src": "src/pages/posts/[id].css"
   },
-  "src/pages/index.css": {
-    "file": "assets/asset-970201cc.css",
-    "src": "src/pages/index.css"
+  "query.css": {
+    "file": "assets/asset-7b9086eb.css",
+    "src": "query.css"
   },
   "src/pages/posts/index.css": {
     "file": "assets/asset-23af9c83.css",
     "src": "src/pages/posts/index.css"
   },
-  "query.css": {
-    "file": "assets/asset-7b9086eb.css",
-    "src": "query.css"
+  "src/pages/index.css": {
+    "file": "assets/asset-970201cc.css",
+    "src": "src/pages/index.css"
   },
   "index.css": {
     "file": "assets/asset-9e26f269.css",
