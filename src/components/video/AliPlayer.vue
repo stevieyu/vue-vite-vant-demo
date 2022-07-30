@@ -17,12 +17,12 @@ const init = () => {
 };
 
 onMounted(async () => {
+  load([
+    'https://g.alicdn.com/de/prismplayer/2.9.22/skins/default/aliplayer-min.css',
+  ], 'aliplayercss');
   await load([
     'https://g.alicdn.com/de/prismplayer/2.9.22/aliplayer-h5-min.js',
   ], 'aliplayerjs');
-  await load([
-    'https://g.alicdn.com/de/prismplayer/2.9.22/skins/default/aliplayer-min.css',
-  ], 'aliplayercss');
 
   init();
 });
