@@ -1,1 +1,0 @@
-import{o as t,c as e,t as n}from"./app-af9c478c.js";const p={__name:"[...any]",props:{any:{type:Array,default:()=>[]}},setup(a){return(r,o)=>(t(),e("div",null,"404 for path "+n(a.any.join("/")),1))}};export{p as default};
