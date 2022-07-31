@@ -1,8 +1,4 @@
-
-
-const config = {
+export default {
   origin: '',
+  getRequest: async (url) => (await fetch(url.toString())).json(),
 };
-
-
-export default config;

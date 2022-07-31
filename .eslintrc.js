@@ -32,6 +32,7 @@ module.exports = {
     defineEmits: 'readonly',
     defineExpose: 'readonly',
     withDefaults: 'readonly',
+    uni: 'readonly',
     $loading: 'readonly',
     $toast: 'readonly',
   },

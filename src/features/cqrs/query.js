@@ -1,33 +1,24 @@
 import config from './config';
+import stringify from 'qs/lib/stringify';
 // import throttlePromise from './utils/throttlePromise';
 
-let query = null;
 
-export const setQuery = (paramsQuery) => {
-  query = paramsQuery;
+export const stringifyUrl = (path = '', params = {}) => {
+  // const origin = config.origin || import.meta.env.VITE_API_ORIGIN || 'http://httpbin.org/anything'
+  // let uri = path.includes('://') ? path : origin.replace(/\/$/, '') + path
+
+  let uri = path;
+
+  if (typeof params === 'object') {
+    uri += (uri.includes('?') ?'&':'?') + stringify(params);
+  }
+  return uri.toString();
 };
 
 export default (path, params = null) => {
-  let uri = config.origin.replace(/\/$/, '');
-  uri = path.includes('http') ? path : uri + path;
-
-  const url = new URL(uri);
-  if (params && typeof params === 'object') {
-    for (const key of Object.keys(params)) {
-      url.searchParams.append(key, params[key]);
-    }
-  }
-
-  if (!query) query = initQuery;
-  return query(url);
+  const url = stringifyUrl(path, params);
+  return config.getRequest(url);
   // return throttlePromise(query(url, params));
 };
 
-/**
- *
- * @param {string|URL} url
- * @return {Promise<any>}
- */
-async function initQuery(url) {
-  return await (await fetch(url.toString())).json();
-}
+

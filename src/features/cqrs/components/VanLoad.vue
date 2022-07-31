@@ -1,6 +1,6 @@
 <template>
   <van-pull-refresh
-    v-model="prLoading"
+    v-model="refreshLoading"
     @refresh="refresh"
   >
     <van-skeleton
@@ -9,7 +9,7 @@
       v-show="!data && !error"
     />
     <slot
-      :item="data"
+      :data="data"
       v-if="data"
     />
     <van-empty
@@ -46,8 +46,8 @@ const {data, refresh, loading, error} = useRequest(request, {
   cacheKey: () => `show-${JSON.stringify(defaultParams).replace(/["|:|{|}|,]/g, '')}`,
 });
 
-let prLoading = $ref(false);
+let refreshLoading = $ref(false);
 watch(loading, (val) => {
-  if (!val) prLoading = false;
+  if (!val) refreshLoading = false;
 });
 </script>

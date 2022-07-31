@@ -17,15 +17,3 @@ app.config.errorHandler = (err) => {
 //   console.log('errorHandler', err, instance, info);
 };
 
-(() => {
-  const s = document.createElement('script');
-  s.src = 'https://cdn.jsdelivr.net/npm/eruda';
-  s.onload = () => window.eruda.init();
-  document.head.appendChild(s);
-})();
-(() => {
-  const s = document.createElement('script');
-  s.src = 'https://cdn.jsdelivr.net/npm/vconsole';
-  s.onload = () => new window.VConsole();
-  document.head.appendChild(s);
-})();
