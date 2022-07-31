@@ -4,7 +4,7 @@ import App from './App.vue';
 
 
 import 'uno.css';
-import {$toast} from './libs/feedback';
+import {$toast} from './features/common/feedback';
 
 const app = createApp(App).use(bootstrap);
 isReady().then(() => app.mount('#app'));

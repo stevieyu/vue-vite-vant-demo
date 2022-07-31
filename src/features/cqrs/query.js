@@ -1,5 +1,6 @@
 import config from './config';
-import stringify from 'qs/lib/stringify';
+// import stringify from 'qs/lib/stringify';
+import {stringify} from '@/features/common/utils/qs';
 // import throttlePromise from './utils/throttlePromise';
 
 

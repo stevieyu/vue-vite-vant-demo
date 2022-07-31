@@ -6,7 +6,7 @@ import {useRoute} from 'vue-router';
 
 import store from '@/store';
 
-import feedback from '@/libs/feedback';
+import feedback from '@/features/common/feedback';
 
 import authingWxMp from '@/supports/authingWxMp';
 authingWxMp().then((res) => {

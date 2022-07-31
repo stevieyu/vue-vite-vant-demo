@@ -6,7 +6,7 @@
 export default ($el, duration = 500) => {
   if (!$el) return;
   const top = $el.getBoundingClientRect().top;
-  const pageY = window.pageYOffset;
+  const pageY = window.scrollY;
   const endPosition = top + pageY;
 
   const startTime = +new Date();
