@@ -8,7 +8,7 @@ import eslint from 'vite-plugin-eslint';
 import components from 'unplugin-vue-components/vite';
 import {VantResolver as vantResolver} from 'unplugin-vue-components/resolvers';
 import unocss from 'unocss/vite';
-
+import legacy from '@vitejs/plugin-legacy';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -28,6 +28,12 @@ export default defineConfig({
       }),
       enforce: 'pre',
     },
+    isProd && legacy({
+      targets: ['ios >= 10'],
+      // https://github.com/zloirock/core-js
+      polyfills: ['es.promise.finally', 'es/map', 'es/set', 'features/url-search-params'],
+      modernPolyfills: [],
+    }),
     components({
       dirs: ['src/components/import'],
       resolvers: [
