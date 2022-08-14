@@ -31,7 +31,7 @@ export default defineConfig({
     isProd && legacy({
       targets: ['ios >= 10'],
       // https://github.com/zloirock/core-js
-      polyfills: ['es.promise.finally', 'es/map', 'es/set', 'features/url-search-params'],
+      polyfills: ['es.promise.finally', 'es/map', 'es/set', 'web.url-search-params'],
       modernPolyfills: [],
     }),
     components({
