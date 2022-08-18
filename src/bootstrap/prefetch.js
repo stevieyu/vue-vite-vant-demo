@@ -6,7 +6,7 @@ if (import.meta.env.PROD) {
         return res.text();
       })
       .then((res) => {
-        res.match(/assets.*(js|css)/gm)
+        res.match(/(\/[\w.]+){2,}(js|css)/gm)
             .forEach((i) => createLink(baseUrl + i));
       });
 }
