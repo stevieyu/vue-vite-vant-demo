@@ -16,6 +16,7 @@
     "@vueuse/components": "^8.9.1",
     "@vueuse/core": "^8.0.0",
     "loadjs": "^4.2.0",
+    "motion": "^10.14.1",
     "pinia": "^2.0.6",
     "vant": "^4.0.0-0",
     "vue": "^3.2.19",
